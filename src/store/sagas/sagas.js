@@ -3,17 +3,17 @@ import {takeLatest,put} from "redux-saga/effects";
 import C from "../constant";
 
 function* asyncIncrement() {
-	yield delay(2000);
+	yield delay(1000);
 	yield put({type:C.INC})
 }
 
 function* asyncDecrement(){
-	yield delay(200);
+	yield delay(1000);
 	yield put({type:C.DEC});
 }
 
 function* asyncReset() {
-	yield delay(2000);
+	yield delay(1000);
 	yield put({type:C.RESET})
 }
 //rootSaga() => SAGA Watcher

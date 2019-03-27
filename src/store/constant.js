@@ -1,3 +1,4 @@
+// A file where all the constant is saved .
 export default {
 	INC: "INCREMENT",
 	DEC: "DECREMENT",

@@ -1,35 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
-const Number_ZERO = 0;
-class App extends Component {
-    state={
-        count:Number_ZERO
-    };
-    addCounter =()=>{
-        const {increment}=this.props.action;
-        increment();
-    };
-    resetFunction = ()=>{
-        const {reset} =this.props.action;
-        reset();
-    };
-    decCounter =()=>{
-       const {decrement} =this.props.action;
-       decrement();
-    };
-  render() {
-      const {decrement} =this.props.action;
-      //const {count} = this.props.state;
-      console.log("counter value => ", this.props);
-    return (
-      <div className="App">
-          <span>{this.props.counter}</span>
-       <button onClick={this.addCounter}>Add Counter</button>
-       <button onClick={decrement}>Decrement Counter</button>
-       <button onClick={this.resetFunction}> Reset</button>
-      </div>
-    );
-  }
-}
+import React from 'react';
+import Button from "./Component/Button/Button";
+import styled from "styled-components/macro";
 
-export default App;
+const APP = (props)=>{
+    const Container = styled.div`
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items:center;
+      margin-top: 120px;
+    `;
+    const CounterDisplay = styled.div`
+      border: 2px solid palevioletred;
+      margin: 0.15em;
+      width: 150px;
+      text-align:center;
+      padding: 0.5em;
+      border-radius: 2px;
+      font-size: 20px;
+      font-weight:bold;
+    `;
+    const {decrement,increment,reset} =props.action;
+    return (
+        <React.Fragment >
+            <Container>
+                <CounterDisplay>{props.counter}</CounterDisplay>
+                <Button onClick={increment} buttonText="Increment" primary />
+                <Button onClick={decrement} buttonText="Decrement" primary/>
+                <Button onClick={reset} buttonText="Reset" />
+            </Container>
+        </React.Fragment>
+    );
+};
+
+export default APP;

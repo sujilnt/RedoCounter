@@ -1,5 +1,6 @@
 import {combineReducers} from "redux";
 import C from "./constant";
+
 export const counter = (state=0,action)=>{
 	switch(action.type){
 		case C.INC:
