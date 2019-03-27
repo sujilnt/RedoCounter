@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {DECREMENT_ACTION, INCREMENT_ACTION} from "./store/actions";
+import {DECREMENT_ACTION, INCREMENT_ACTION,RESET_ACTION} from "./store/actions";
 import App from "./App";
 
 const mapStateToProps = (state)=>{
@@ -13,6 +13,7 @@ const mapDispatchToProps = (dispatcher)=>{
   	action:{
 	    increment: ()=> dispatcher(INCREMENT_ACTION()),
 	    decrement: ()=> dispatcher(DECREMENT_ACTION()),
+	    reset:()=> dispatcher(RESET_ACTION())
     }
   }
 };

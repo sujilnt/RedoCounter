@@ -14,8 +14,6 @@ export const counter = (state=0,action)=>{
 	}
 };
 
-
-
 export const rootReducer =  combineReducers({
 	counter
 });

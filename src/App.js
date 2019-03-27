@@ -8,24 +8,25 @@ class App extends Component {
     addCounter =()=>{
         const {increment}=this.props.action;
         increment();
-        console.log(this.props);
     };
-    reset = ()=>{
-        this.setState(()=>{
-            return {
-                count: Number_ZERO
-            }
-        })
+    resetFunction = ()=>{
+        const {reset} =this.props.action;
+        reset();
+    };
+    decCounter =()=>{
+       const {decrement} =this.props.action;
+       decrement();
     };
   render() {
-      //const {count} =this.state;
+      const {decrement} =this.props.action;
       //const {count} = this.props.state;
       console.log("counter value => ", this.props);
     return (
       <div className="App">
           <span>{this.props.counter}</span>
        <button onClick={this.addCounter}>Add Counter</button>
-       <button onClick={this.reset}> Reset</button>
+       <button onClick={decrement}>Decrement Counter</button>
+       <button onClick={this.resetFunction}> Reset</button>
       </div>
     );
   }

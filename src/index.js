@@ -5,8 +5,9 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import storeFactory from "./store/storeFactory";
 import AppContainer from "./AppContainer";
-const store = storeFactory();
-
+import {rootReducer} from "./store/reducer";
+import {rootSaga} from "./store/sagas/sagas";
+const store = storeFactory(rootReducer,rootSaga);
 store.subscribe(
 	()=>console.log(store,store.getState())
 );
