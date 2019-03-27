@@ -1,3 +1,5 @@
 export default {
-	ADD_COUNTER: "ADD_COUNTER"
+	INC: "INCREMENT",
+	DEC: "DECREMENT",
+	RESET:"RESET"
 };

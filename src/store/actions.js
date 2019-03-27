@@ -1,8 +1,13 @@
 import C from "./constant";
 
-const AddCounterAction = (value=0)=>{
+export const INCREMENT_ACTION = ()=>{
 	return{
-		type: C.ADD_COUNTER,
-		payload: value
+		type: C.INC,
 	};
+};
+
+export const DECREMENT_ACTION=()=>{
+	return{
+		type: C.INC,
+	}
 };

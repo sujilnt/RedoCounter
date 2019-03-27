@@ -6,11 +6,9 @@ class App extends Component {
         count:Number_ZERO
     };
     addCounter =()=>{
-        this.setState((prevstate,props)=>{
-            return {
-                count: prevstate.count+1
-            };
-        });
+        const {increment}=this.props.action;
+        increment();
+        console.log(this.props);
     };
     reset = ()=>{
         this.setState(()=>{
@@ -20,8 +18,9 @@ class App extends Component {
         })
     };
   render() {
-      const {count} =this.state;
-      console.log("counter value => ", count);
+      //const {count} =this.state;
+      //const {count} = this.props.state;
+      console.log("counter value => ", this.props);
     return (
       <div className="App">
        <button onClick={this.addCounter}>Add Counter</button>
