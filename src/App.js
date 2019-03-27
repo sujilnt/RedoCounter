@@ -23,6 +23,7 @@ class App extends Component {
       console.log("counter value => ", this.props);
     return (
       <div className="App">
+          <span>{this.props.counter}</span>
        <button onClick={this.addCounter}>Add Counter</button>
        <button onClick={this.reset}> Reset</button>
       </div>

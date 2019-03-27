@@ -3,14 +3,11 @@ import C from "./constant";
 export const counter = (state=0,action)=>{
 	switch(action.type){
 		case C.INC:
-			state= state+1;
-			break;
+			return state+1;
 		case C.DEC:
-			state= state-1;
-			break;
+			return state-1;
 		case C.RESET:
-			state=0;
-			break;
+			return 0;
 		default:
 			return state;
 		
